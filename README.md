@@ -15,8 +15,9 @@ Clone este repositório em sua máquina:
    ```
 
 Navegue até o diretório do projeto
+  
    ```bash
-   cd seu-repositorio
+   cd api-jwt-mongodb
    ```
 
 Instale as dependências do projeto:
@@ -107,6 +108,7 @@ Resposta
       "nome": "Nome da Nova Postagem",
       "descricao": "Descrição da Nova Postagem"
    }
+   ```
 
 Atualizar uma Postagem por ID
 Rota: PUT /posts/:id
