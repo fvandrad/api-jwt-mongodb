@@ -10,15 +10,20 @@ Certifique-se de ter o Node.js e o MongoDB instalados em sua máquina antes de e
 
 Clone este repositório em sua máquina:
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
+   ```bash
+   git clone https://github.com/fvandrad/api-jwt-mongodb.git
+   ```
 
 Navegue até o diretório do projeto
-
+   ```bash
    cd seu-repositorio
+   ```
 
 Instale as dependências do projeto:
 
+   ```bash
    npm install
+   ```
 
 # Rotas da API
 O servidor fornece as seguintes rotas da API:
@@ -34,6 +39,7 @@ Corpo da Requisição:
       "username": "seu_nome_de_usuario",
       "password": "sua_senha"
    }
+   ```
 
 Login e Geração de Token JWT
 Rota: POST /login
@@ -46,6 +52,7 @@ Corpo da Requisição:
       "username": "seu_nome_de_usuario",
       "password": "sua_senha"
    }
+   ```
 
 Resposta:
 
@@ -54,6 +61,7 @@ Resposta:
    {
       "token": "seu_token_jwt"
    }
+   ```
 
 Listar Postagens
 Rota: GET /posts
@@ -73,6 +81,7 @@ Resposta:
       },
       // Outras postagens
    ]
+   ```
 
 Criar uma Nova Postagem
 Rota: POST /posts
@@ -81,14 +90,16 @@ Cabeçalho da Requisição:
 Authorization: Bearer seu_token_jwt
 
 Corpo da Requisição:
-   
+
    ```bash
    json
    {
    "nome": "Nome da Nova Postagem",
    "descricao": "Descrição da Nova Postagem"
    }
+   ```
 
+Resposta
    ```bash
    json
    {
@@ -112,6 +123,7 @@ Corpo da Requisição:
       "nome": "Novo Nome da Postagem",
       "descricao": "Nova Descrição da Postagem"
    }
+   ```
 
 Resposta:
    
@@ -122,6 +134,7 @@ Resposta:
       "nome": "Novo Nome da Postagem",
       "descricao": "Nova Descrição da Postagem"
    }
+   ```
 
 Deletar uma Postagem por ID
 Rota: DELETE /posts/:id
@@ -130,12 +143,14 @@ Cabeçalho da Requisição:
 Authorization: Bearer seu_token_jwt
 Parâmetros da Rota:
 id: ID da postagem que você deseja deletar.
+
 Resposta:
    ```bash
    json
    {
       "message": "Postagem deletada com sucesso"
    }
+   ```
 
 Observações
 Certifique-se de substituir <sua_conexao> pela URL correta do seu banco de dados MongoDB e <seu_secreto> pelo seu segredo desejado no arquivo .env.
