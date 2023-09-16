@@ -10,17 +10,14 @@ Certifique-se de ter o Node.js e o MongoDB instalados em sua máquina antes de e
 
 Clone este repositório em sua máquina:
 
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/seu-usuario/seu-repositorio.git
 
 Navegue até o diretório do projeto
 
-   ```bash
    cd seu-repositorio
 
 Instale as dependências do projeto:
 
-   ```bash
    npm install
 
 # Rotas da API
