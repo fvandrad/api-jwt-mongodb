@@ -98,6 +98,22 @@ app.get('/posts', verificarToken, async (req, res) => {
   }
 });
 
+app.get('/posts/:postId', verificarToken, async (req, res) => {
+  try {
+    const postId = req.params.postId;
+    const post = await Post.findById(postId);
+
+    if (!post) {
+      return res.status(404).json({ error: 'Post não encontrado' });
+    }
+
+    res.json(post);
+  } catch (err) {
+    console.error('Erro ao selecionar o post:', err);
+    res.status(500).json({ error: 'Erro ao selecionar o post' });
+  }
+});
+
 // Rota para criar uma nova postagem
 app.post('/posts', verificarToken, async (req, res) => {
   try {
