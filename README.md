@@ -29,12 +29,12 @@ Instale as dependências do projeto:
 # Rotas da API
 O servidor fornece as seguintes rotas da API:
 
+   ```bash
    Registro de Usuário
    Rota: POST /register
    Descrição: Registra um novo usuário com um nome de usuário e senha.
    Corpo da Requisição:
 
-   ```bash
    json
    {
       "username": "seu_nome_de_usuario",
