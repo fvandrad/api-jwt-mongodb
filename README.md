@@ -82,6 +82,25 @@ Listar Postagens
    ]
    ```
 
+Listar Postagens por ID
+```bash
+   Rota: GET /posts/:id
+   Descrição: Retorna uma postagens.
+   Cabeçalho da Requisição:
+   Authorization: Bearer seu_token_jwt
+
+   Resposta:
+   
+   json
+   [
+      {
+         "_id": "ID_da_Postagem",
+         "nome": "Nome da Postagem",
+         "descricao": "Descrição da Postagem"
+      },
+   ]
+   ```
+
 Criar uma Nova Postagem
    ```bash
    Rota: POST /posts
