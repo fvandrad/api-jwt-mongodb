@@ -29,8 +29,8 @@ Instale as dependências do projeto:
 # Rotas da API
 O servidor fornece as seguintes rotas da API:
 
+Registro de Usuário
    ```bash
-   Registro de Usuário
    Rota: POST /register
    Descrição: Registra um novo usuário com um nome de usuário e senha.
    Corpo da Requisição:
@@ -53,11 +53,9 @@ Login e Geração de Token JWT
       "username": "seu_nome_de_usuario",
       "password": "sua_senha"
    }
-   ```
 
-Resposta:
-
-   ```bash 
+   Resposta:
+   
    json
    {
       "token": "seu_token_jwt"
@@ -65,14 +63,14 @@ Resposta:
    ```
 
 Listar Postagens
-Rota: GET /posts
-Descrição: Retorna uma lista de postagens.
-Cabeçalho da Requisição:
-Authorization: Bearer seu_token_jwt
+```bash
+   Rota: GET /posts
+   Descrição: Retorna uma lista de postagens.
+   Cabeçalho da Requisição:
+   Authorization: Bearer seu_token_jwt
 
-Resposta:
+   Resposta:
    
-   ```bash
    json
    [
       {
@@ -85,23 +83,22 @@ Resposta:
    ```
 
 Criar uma Nova Postagem
-Rota: POST /posts
-Descrição: Cria uma nova postagem.
-Cabeçalho da Requisição:
-Authorization: Bearer seu_token_jwt
-
-Corpo da Requisição:
-
    ```bash
+   Rota: POST /posts
+   Descrição: Cria uma nova postagem.
+   Cabeçalho da Requisição:
+   Authorization: Bearer seu_token_jwt
+
+   Corpo da Requisição:
+
    json
    {
    "nome": "Nome da Nova Postagem",
    "descricao": "Descrição da Nova Postagem"
    }
-   ```
-
-Resposta
-   ```bash
+   
+   Resposta
+   
    json
    {
       "_id": "ID_da_Nova_Postagem",
@@ -111,23 +108,22 @@ Resposta
    ```
 
 Atualizar uma Postagem por ID
-Rota: PUT /posts/:id
-Descrição: Atualiza uma postagem existente com base em seu ID.
-Cabeçalho da Requisição:
-Authorization: Bearer seu_token_jwt
-Parâmetros da Rota:
-id: ID da postagem que você deseja atualizar.
-Corpo da Requisição:
-   
    ```bash
+   Rota: PUT /posts/:id
+   Descrição: Atualiza uma postagem existente com base em seu ID.
+   Cabeçalho da Requisição:
+   Authorization: Bearer seu_token_jwt
+   Parâmetros da Rota:
+   id: ID da postagem que você deseja atualizar.
+   Corpo da Requisição:
+   
    json
    {
       "nome": "Novo Nome da Postagem",
       "descricao": "Nova Descrição da Postagem"
    }
-   ```
-
-Resposta:
+   
+   Resposta:
    
    ```bash
    json
@@ -139,15 +135,15 @@ Resposta:
    ```
 
 Deletar uma Postagem por ID
-Rota: DELETE /posts/:id
-Descrição: Deleta uma postagem existente com base em seu ID.
-Cabeçalho da Requisição:
-Authorization: Bearer seu_token_jwt
-Parâmetros da Rota:
-id: ID da postagem que você deseja deletar.
-
-Resposta:
    ```bash
+   Rota: DELETE /posts/:id
+   Descrição: Deleta uma postagem existente com base em seu ID.
+   Cabeçalho da Requisição:
+   Authorization: Bearer seu_token_jwt
+   Parâmetros da Rota:
+   id: ID da postagem que você deseja deletar.
+
+   Resposta:
    json
    {
       "message": "Postagem deletada com sucesso"
