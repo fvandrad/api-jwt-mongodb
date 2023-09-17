@@ -97,7 +97,8 @@ Listar Postagens
    ```
 
 Listar Postagem por ID
-```bash
+   
+   ```bash
    Rota: GET /posts/:id
    Descrição: Retorna uma postagens.
    Cabeçalho da Requisição:
@@ -141,6 +142,7 @@ Criar uma Nova Postagem
    ```
 
 Atualizar uma Postagem por ID
+  
    ```bash
    Rota: PUT /posts/:id
    Descrição: Atualiza uma postagem existente com base em seu ID.
@@ -158,7 +160,6 @@ Atualizar uma Postagem por ID
    
    Resposta:
    
-   ```bash
    json
    {
       "_id": "ID_da_Postagem_Atualizada",
