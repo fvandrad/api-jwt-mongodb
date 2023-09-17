@@ -29,7 +29,7 @@ Instale as dependências do projeto:
 # Rotas da API
 O servidor fornece as seguintes rotas da API:
 
-Registro de Usuário
+Registro de Usuário\n
 Rota: POST /register
 Descrição: Registra um novo usuário com um nome de usuário e senha.
 Corpo da Requisição:
