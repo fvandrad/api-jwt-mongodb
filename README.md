@@ -97,7 +97,7 @@ Listar Postagem por ID
          "_id": "ID_da_Postagem",
          "nome": "Nome da Postagem",
          "descricao": "Descrição da Postagem"
-      },
+      }
    ]
    ```
 
