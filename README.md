@@ -8,23 +8,37 @@ Certifique-se de ter o Node.js e o MongoDB instalados em sua máquina antes de e
 
 ## Instalação
 
-Clone este repositório em sua máquina:
+1. Clone este repositório em sua máquina:
 
    ```bash
    git clone https://github.com/fvandrad/api-jwt-mongodb.git
    ```
 
-Navegue até o diretório do projeto
+2. Navegue até o diretório do projeto
   
    ```bash
    cd api-jwt-mongodb
    ```
 
-Instale as dependências do projeto:
+3. Instale as dependências do projeto:
 
    ```bash
    npm install
    ```
+
+4. Instale as dependências do projeto:
+
+   ```bash
+   npm install
+   ```
+
+5. Execute o aplicativo:
+
+   ```bash
+   node app.js
+   ```
+
+O aplicativo será executado e estará acessível em http://localhost:3000 (ou em outra porta configurada, se aplicável).
 
 # Rotas da API
 O servidor fornece as seguintes rotas da API:
