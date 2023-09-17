@@ -43,11 +43,11 @@ O servidor fornece as seguintes rotas da API:
    ```
 
 Login e Geração de Token JWT
-Rota: POST /login
-Descrição: Autentica um usuário e gera um token JWT válido.
-Corpo da Requisição:
-   
    ```bash
+   Rota: POST /login
+   Descrição: Autentica um usuário e gera um token JWT válido.
+   Corpo da Requisição:
+   
    json
    {
       "username": "seu_nome_de_usuario",
