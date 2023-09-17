@@ -82,7 +82,7 @@ Listar Postagens
    ]
    ```
 
-Listar Postagens por ID
+Listar Postagem por ID
 ```bash
    Rota: GET /posts/:id
    Descrição: Retorna uma postagens.
