@@ -1,4 +1,4 @@
-# api-jwt-mongodb 2023
+# api-jwt-mongodb
 
 ## Descrição
 Este é um exemplo de um servidor Node.js que fornece uma API básica para registro de usuários, autenticação com tokens JWT, e operações CRUD em postagens. O servidor utiliza o MongoDB para armazenar dados de usuários e postagens.
