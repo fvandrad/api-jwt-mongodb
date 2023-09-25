@@ -26,13 +26,7 @@ Certifique-se de ter o Node.js e o MongoDB instalados em sua máquina antes de e
    npm install
    ```
 
-4. Instale as dependências do projeto:
-
-   ```bash
-   npm install
-   ```
-
-5. Execute o aplicativo:
+4. Execute o aplicativo:
 
    ```bash
    node app.js
