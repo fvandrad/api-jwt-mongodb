@@ -189,7 +189,11 @@ Deletar uma Postagem por ID
    ```
 
 Observações
+
 Certifique-se de substituir <sua_conexao> pela URL correta do seu banco de dados MongoDB e <seu_secreto> pelo seu segredo desejado no arquivo .env.
+
 Para proteger as rotas, é necessário incluir o token JWT no cabeçalho da requisição com a chave Authorization: Bearer seu_token_jwt.
+
 Este é um exemplo básico e pode ser expandido para atender às suas necessidades específicas.
+
 Aproveite o uso deste servidor de exemplo para criar sua própria aplicação de autenticação e gerenciamento de postagens!
