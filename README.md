@@ -170,16 +170,21 @@ O servidor fornece as seguintes rotas da API:
    }
    ```
 
-## Deletar uma Postagem por ID
-   
-   Rota: DELETE /posts/:id
-   Descrição: Deleta uma postagem existente com base em seu ID.
-   Cabeçalho da Requisição:
-   Authorization: Bearer seu_token_jwt
-   Parâmetros da Rota:
-   id: ID da postagem que você deseja deletar.
+### Deletar uma Postagem por ID
 
-   Resposta:
+Rota: DELETE /posts/:id
+
+Descrição: Deleta uma postagem existente com base em seu ID.
+
+Cabeçalho da Requisição:
+
+Authorization: Bearer seu_token_jwt
+
+Parâmetros da Rota:
+
+id: ID da postagem que você deseja deletar.
+
+Resposta:
    
    ```bash
    json
