@@ -39,9 +39,9 @@ O servidor fornece as seguintes rotas da API:
 
 ### Registro de Usuário
 
-   Rota: POST /register
-   <br>Descrição: Registra um novo usuário com um nome de usuário e senha.
-   Corpo da Requisição:
+Rota: POST /register
+<br>Descrição: Registra um novo usuário com um nome de usuário e senha.
+<br>Corpo da Requisição:
 
    ```bash
    json
@@ -54,10 +54,8 @@ O servidor fornece as seguintes rotas da API:
 ### Login e Geração de Token JWT
 
 Rota: POST /login
-
-Descrição: Autentica um usuário e gera um token JWT válido.
-
-Corpo da Requisição:
+<br>Descrição: Autentica um usuário e gera um token JWT válido.
+<br>Corpo da Requisição:
 
    ```bash
    json
@@ -78,14 +76,10 @@ Corpo da Requisição:
 ### Listar Postagens
    
 Rota: GET /posts
-
-Descrição: Retorna uma lista de postagens.
-
-Cabeçalho da Requisição:
-
-Authorization: Bearer seu_token_jwt
-
-Resposta:
+<br>Descrição: Retorna uma lista de postagens.
+<br>Cabeçalho da Requisição:
+<br>Authorization: Bearer seu_token_jwt
+<br>Resposta:
 
    ```bash
    json
@@ -102,14 +96,10 @@ Resposta:
 ### Listar Postagem por ID
 
 Rota: GET /posts/:id
-
-Descrição: Retorna uma postagens.
-
-Cabeçalho da Requisição:
-
-Authorization: Bearer seu_token_jwt
-
-Resposta:
+<br>Descrição: Retorna uma postagens.
+<br>Cabeçalho da Requisição:
+<br>Authorization: Bearer seu_token_jwt
+<br>Resposta:
    
    ```bash
    json
@@ -124,15 +114,11 @@ Resposta:
 
 ### Criar uma Nova Postagem
 
-   Rota: POST /posts
-   
-   Descrição: Cria uma nova postagem.
-
-   Cabeçalho da Requisição:
-
-   Authorization: Bearer seu_token_jwt
-
-   Corpo da Requisição:
+Rota: POST /posts
+<br>Descrição: Cria uma nova postagem.
+<br>Cabeçalho da Requisição:
+<br>Authorization: Bearer seu_token_jwt
+<br>Corpo da Requisição:
 
    ```bash
    json
@@ -156,18 +142,12 @@ Resposta:
 ### Atualizar uma Postagem por ID
 
 Rota: PUT /posts/:id
-
-Descrição: Atualiza uma postagem existente com base em seu ID.
-
-Cabeçalho da Requisição:
-
-Authorization: Bearer seu_token_jwt
-
-Parâmetros da Rota:
-
-id: ID da postagem que você deseja atualizar.
-
-Corpo da Requisição:
+<br>Descrição: Atualiza uma postagem existente com base em seu ID.
+<br>Cabeçalho da Requisição:
+<br>Authorization: Bearer seu_token_jwt
+<br>Parâmetros da Rota:
+<br>id: ID da postagem que você deseja atualizar.
+<br>Corpo da Requisição:
   
    ```bash
    json
@@ -191,18 +171,12 @@ Corpo da Requisição:
 ### Deletar uma Postagem por ID
 
 Rota: DELETE /posts/:id
-
-Descrição: Deleta uma postagem existente com base em seu ID.
-
-Cabeçalho da Requisição:
-
-Authorization: Bearer seu_token_jwt
-
-Parâmetros da Rota:
-
-id: ID da postagem que você deseja deletar.
-
-Resposta:
+<br>Descrição: Deleta uma postagem existente com base em seu ID.
+<br>Cabeçalho da Requisição:
+<br>Authorization: Bearer seu_token_jwt
+<br>Parâmetros da Rota:
+<br>id: ID da postagem que você deseja deletar.
+<br>Resposta:
    
    ```bash
    json
@@ -214,9 +188,6 @@ Resposta:
 ## Observações
 
 Certifique-se de substituir <sua_conexao> pela URL correta do seu banco de dados MongoDB e <seu_secreto> pelo seu segredo desejado no arquivo .env.
-
-Para proteger as rotas, é necessário incluir o token JWT no cabeçalho da requisição com a chave Authorization: Bearer seu_token_jwt.
-
-Este é um exemplo básico e pode ser expandido para atender às suas necessidades específicas.
-
-Aproveite o uso deste servidor de exemplo para criar sua própria aplicação de autenticação e gerenciamento de postagens!
+<br>Para proteger as rotas, é necessário incluir o token JWT no cabeçalho da requisição com a chave Authorization: Bearer seu_token_jwt.
+<br>Este é um exemplo básico e pode ser expandido para atender às suas necessidades específicas.
+<br>Aproveite o uso deste servidor de exemplo para criar sua própria aplicação de autenticação e gerenciamento de postagens!
