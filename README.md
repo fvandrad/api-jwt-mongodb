@@ -37,10 +37,10 @@ O aplicativo será executado e estará acessível em http://localhost:3000 (ou e
 # Rotas da API
 O servidor fornece as seguintes rotas da API:
 
-## Registro de Usuário
+### Registro de Usuário
 
    Rota: POST /register
-   Descrição: Registra um novo usuário com um nome de usuário e senha.
+   <br>Descrição: Registra um novo usuário com um nome de usuário e senha.
    Corpo da Requisição:
 
    ```bash
@@ -51,11 +51,13 @@ O servidor fornece as seguintes rotas da API:
    }
    ```
 
-## Login e Geração de Token JWT
+### Login e Geração de Token JWT
 
-   Rota: POST /login
-   Descrição: Autentica um usuário e gera um token JWT válido.
-   Corpo da Requisição:
+Rota: POST /login
+
+Descrição: Autentica um usuário e gera um token JWT válido.
+
+Corpo da Requisição:
 
    ```bash
    json
@@ -73,13 +75,17 @@ O servidor fornece as seguintes rotas da API:
    }
    ```
 
-## Listar Postagens
+### Listar Postagens
    
-   Rota: GET /posts
-   Descrição: Retorna uma lista de postagens.
-   Cabeçalho da Requisição:
-   Authorization: Bearer seu_token_jwt
-   Resposta:
+Rota: GET /posts
+
+Descrição: Retorna uma lista de postagens.
+
+Cabeçalho da Requisição:
+
+Authorization: Bearer seu_token_jwt
+
+Resposta:
 
    ```bash
    json
@@ -93,14 +99,17 @@ O servidor fornece as seguintes rotas da API:
    ]
    ```
 
-## Listar Postagem por ID
+### Listar Postagem por ID
 
-   Rota: GET /posts/:id
-   Descrição: Retorna uma postagens.
-   Cabeçalho da Requisição:
-   Authorization: Bearer seu_token_jwt
-   
-   Resposta:
+Rota: GET /posts/:id
+
+Descrição: Retorna uma postagens.
+
+Cabeçalho da Requisição:
+
+Authorization: Bearer seu_token_jwt
+
+Resposta:
    
    ```bash
    json
