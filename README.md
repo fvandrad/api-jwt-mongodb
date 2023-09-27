@@ -113,11 +113,14 @@ O servidor fornece as seguintes rotas da API:
    ]
    ```
 
-## Criar uma Nova Postagem
+### Criar uma Nova Postagem
 
    Rota: POST /posts
+   
    Descrição: Cria uma nova postagem.
+
    Cabeçalho da Requisição:
+
    Authorization: Bearer seu_token_jwt
 
    Corpo da Requisição:
@@ -141,15 +144,21 @@ O servidor fornece as seguintes rotas da API:
    }
    ```
 
-## Atualizar uma Postagem por ID
+### Atualizar uma Postagem por ID
 
-   Rota: PUT /posts/:id
-   Descrição: Atualiza uma postagem existente com base em seu ID.
-   Cabeçalho da Requisição:
-   Authorization: Bearer seu_token_jwt
-   Parâmetros da Rota:
-   id: ID da postagem que você deseja atualizar.
-   Corpo da Requisição:
+Rota: PUT /posts/:id
+
+Descrição: Atualiza uma postagem existente com base em seu ID.
+
+Cabeçalho da Requisição:
+
+Authorization: Bearer seu_token_jwt
+
+Parâmetros da Rota:
+
+id: ID da postagem que você deseja atualizar.
+
+Corpo da Requisição:
   
    ```bash
    json
