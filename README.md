@@ -37,7 +37,7 @@ O aplicativo será executado e estará acessível em http://localhost:3000 (ou e
 # Rotas da API
 O servidor fornece as seguintes rotas da API:
 
-Registro de Usuário
+## Registro de Usuário
 
    Rota: POST /register
    Descrição: Registra um novo usuário com um nome de usuário e senha.
@@ -51,7 +51,7 @@ Registro de Usuário
    }
    ```
 
-Login e Geração de Token JWT
+## Login e Geração de Token JWT
 
    Rota: POST /login
    Descrição: Autentica um usuário e gera um token JWT válido.
@@ -73,7 +73,7 @@ Login e Geração de Token JWT
    }
    ```
 
-Listar Postagens
+## Listar Postagens
    
    Rota: GET /posts
    Descrição: Retorna uma lista de postagens.
@@ -93,7 +93,7 @@ Listar Postagens
    ]
    ```
 
-Listar Postagem por ID
+## Listar Postagem por ID
 
    Rota: GET /posts/:id
    Descrição: Retorna uma postagens.
@@ -113,7 +113,7 @@ Listar Postagem por ID
    ]
    ```
 
-Criar uma Nova Postagem
+## Criar uma Nova Postagem
 
    Rota: POST /posts
    Descrição: Cria uma nova postagem.
@@ -141,7 +141,7 @@ Criar uma Nova Postagem
    }
    ```
 
-Atualizar uma Postagem por ID
+## Atualizar uma Postagem por ID
 
    Rota: PUT /posts/:id
    Descrição: Atualiza uma postagem existente com base em seu ID.
@@ -170,7 +170,7 @@ Atualizar uma Postagem por ID
    }
    ```
 
-Deletar uma Postagem por ID
+## Deletar uma Postagem por ID
    
    Rota: DELETE /posts/:id
    Descrição: Deleta uma postagem existente com base em seu ID.
@@ -188,7 +188,7 @@ Deletar uma Postagem por ID
    }
    ```
 
-Observações
+## Observações
 
 Certifique-se de substituir <sua_conexao> pela URL correta do seu banco de dados MongoDB e <seu_secreto> pelo seu segredo desejado no arquivo .env.
 
