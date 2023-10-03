@@ -43,43 +43,48 @@ app.post('/register', async (req, res) => {
 
 // Rota de login e geração de token JWT
 app.post('/login', async (req, res) => {
-  try {
-    const { username, password } = req.body;
-    const user = await User.findOne({ username });
+  const { username, password } = req.body;
 
+    // Verifica as credenciais do usuário
+    const user = await User.findOne({ username });
     if (!user) {
-      return res.status(401).json({ error: 'Usuário não encontrado' });
+        return res.status(401).json({ message: 'Credenciais inválidas' });
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
-
     if (!isPasswordValid) {
-      return res.status(401).json({ error: 'Senha incorreta' });
+        return res.status(401).json({ message: 'Credenciais inválidas' });
     }
 
     const token = jwt.sign({ username }, secreto, { expiresIn: '1h' });
 
     res.json({ token });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Erro ao fazer login' });
-  }
 });
 
 const verificarToken = (req, res, next) => {
-  const token = req.header('Authorization');
+  const token = req.headers.authorization.split(' ')[1];
 
-  if (!token) {
-    return res.status(401).json({ error: 'Token não fornecido' });
-  }
-
-  try {
-    jwt.verify(token, secreto);
-    next(); // Continue para a próxima rota se o token for válido
-  } catch (error) {
-    res.status(401).json({ error: 'Token inválido' });
-  }
+    try {
+        const decoded = jwt.verify(token, secreto);
+        req.user = decoded;
+        next();
+    } catch (err) {
+        res.status(401).json({ message: 'Token inválido' });
+    }
 };
+
+app.get('/user', verificarToken, (req, res) => {
+  const token = req.header('Authorization');
+  const decodedToken = jwt.decode(token); 
+
+  if (decodedToken && decodedToken.username) {
+    const username = decodedToken.username;  
+    res.json({ username });
+  } else {
+    res.status(401).json({ error: 'Token inválido ou sem nome de usuário' });
+  }
+});
+
 
 const PostSchema = new mongoose.Schema({
   nome: String,
@@ -98,6 +103,7 @@ app.get('/posts', verificarToken, async (req, res) => {
   }
 });
 
+// Rota para selecionar um post com base no ID
 app.get('/posts/:postId', verificarToken, async (req, res) => {
   try {
     const postId = req.params.postId;
@@ -117,15 +123,10 @@ app.get('/posts/:postId', verificarToken, async (req, res) => {
 // Rota para criar uma nova postagem
 app.post('/posts', verificarToken, async (req, res) => {
   try {
-    const { nome, descricao } = req.body; // Certifique-se de que seu corpo de requisição inclua 'nome' e 'descricao'
-
-    // Crie uma nova postagem usando o modelo 'Post'
+    const { nome, descricao } = req.body;
     const novaPostagem = new Post({ nome, descricao });
-
-    // Salve a nova postagem no banco de dados
     const postagemSalva = await novaPostagem.save();
-
-    res.status(201).json(postagemSalva); // Retorna a postagem criada com sucesso
+    res.status(201).json(postagemSalva); 
   } catch (err) {
     console.error('Erro ao criar postagem:', err);
     res.status(500).json({ error: 'Erro ao criar postagem' });
@@ -136,23 +137,19 @@ app.post('/posts', verificarToken, async (req, res) => {
 app.put('/posts/:id', verificarToken, async (req, res) => {
   try {
     const postId = req.params.id;
-    const { nome, descricao } = req.body; // Certifique-se de que seu corpo de requisição inclua 'nome' e 'descricao'
-
-    // Verifique se a postagem com o ID fornecido existe
+    const { nome, descricao } = req.body;
     const postagemExistente = await Post.findById(postId);
 
     if (!postagemExistente) {
       return res.status(404).json({ error: 'Postagem não encontrada' });
     }
 
-    // Atualize os campos da postagem com os novos valores
     postagemExistente.nome = nome;
     postagemExistente.descricao = descricao;
 
-    // Salve as alterações no banco de dados
     const postagemAtualizada = await postagemExistente.save();
 
-    res.json(postagemAtualizada); // Retorna a postagem atualizada
+    res.json(postagemAtualizada);
   } catch (err) {
     console.error('Erro ao atualizar postagem:', err);
     res.status(500).json({ error: 'Erro ao atualizar postagem' });
@@ -164,14 +161,12 @@ app.delete('/posts/:id', verificarToken, async (req, res) => {
   try {
     const postId = req.params.id;
 
-    // Verifique se a postagem com o ID fornecido existe
     const postagemExistente = await Post.findById(postId);
 
     if (!postagemExistente) {
       return res.status(404).json({ error: 'Postagem não encontrada' });
     }
 
-    // Delete a postagem do banco de dados usando o método 'deleteOne'
     await Post.deleteOne({ _id: postId });
 
     res.json({ message: 'Postagem deletada com sucesso' });
